@@ -1,0 +1,8 @@
+
+# Higher numeric value = higher precedence when sources conflict
+precedence:
+  statute: 100
+  regulation: 90
+  guidance: 70
+  case_law: 60
+  faq: 50

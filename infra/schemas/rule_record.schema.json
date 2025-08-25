@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RuleRecord",
+  "type": "object",
+  "required": [
+    "id",
+    "jurisdiction",
+    "rule_family",
+    "severity"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": "object",
+      "required": [
+        "level",
+        "name"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "federal",
+            "state",
+            "city",
+            "county"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "parent": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "rule_family": {
+      "type": "string"
+    },
+    "obligations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "citation"
+        ],
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {},
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "trigger": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "citation": {
+            "type": "object"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "penalties_premiums": {
+      "type": "array"
+    },
+    "severity": {
+      "type": "object",
+      "required": [
+        "level",
+        "escalation"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low"
+          ]
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "escalation": {
+          "type": "object",
+          "required": [
+            "sla_hours",
+            "owner"
+          ],
+          "properties": {
+            "sla_hours": {
+              "type": "integer"
+            },
+            "owner": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "effective": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

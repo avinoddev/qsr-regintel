@@ -1,0 +1,30 @@
+
+families:
+  - key: timekeeping
+    title: Timekeeping & Recordkeeping
+  - key: hours_worked
+    title: Hours Worked
+  - key: overtime
+    title: Overtime
+  - key: meal_periods
+    title: Meal Periods
+  - key: rest_breaks
+    title: Rest Breaks
+  - key: predictive_scheduling
+    title: Predictive Scheduling / Fair Workweek
+  - key: clopening
+    title: Clopening / Right to Rest
+  - key: reporting_pay
+    title: Reporting / Call-In / Show-Up Pay
+  - key: split_shift
+    title: Split Shift
+  - key: spread_of_hours
+    title: Spread of Hours
+  - key: youth_labor
+    title: Youth Labor
+  - key: record_retention
+    title: Record Retention
+  - key: rounding
+    title: Rounding
+  - key: enforcement
+    title: Enforcement & Penalties

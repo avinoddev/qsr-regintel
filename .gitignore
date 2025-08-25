@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+.env.*
+
+# Node (if any UI)
+node_modules/
+
+# OS
+.DS_Store
+
+# Docker / Compose
+*.log
+*.pid
+/.pytest_cache/
+dist/
+build/
+
+# Local data
+minio-data/
+postgres-data/
+redis-data/
+
+# Secrets (don’t commit these)
+secrets/*.json
+*.pem
+*.key
+
+# IDE
+.vscode/
+.idea/

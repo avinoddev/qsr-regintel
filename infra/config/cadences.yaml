@@ -1,0 +1,9 @@
+
+cadences:
+  federal_days: 7
+  state_days: 7
+  local_days: 14
+  critical_sla_hours: 24
+  high_sla_hours: 72
+  medium_sla_days: 7
+  low_sla_days: 14

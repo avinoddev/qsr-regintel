@@ -1,0 +1,43 @@
+
+openapi: 3.0.3
+info:
+  title: QSR-RegIntel API
+  version: 0.1.0
+paths:
+  /rules:
+    get:
+      summary: List rules
+      parameters:
+        - in: query
+          name: jurisdiction
+          schema: { type: string }
+        - in: query
+          name: family
+          schema: { type: string }
+        - in: query
+          name: severity
+          schema: { type: string, example: "High,Critical" }
+      responses:
+        '200':
+          description: OK
+  /changes:
+    get:
+      summary: Change feed
+      parameters:
+        - in: query
+          name: since
+          schema: { type: string, format: date-time }
+      responses:
+        '200':
+          description: OK
+  /pdf/jurisdictions/{code}/latest:
+    get:
+      summary: Latest jurisdiction digest PDF
+      parameters:
+        - in: path
+          required: true
+          name: code
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK

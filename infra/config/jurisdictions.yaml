@@ -1,0 +1,19 @@
+
+federal:
+  enabled: true
+states:
+  - code: CA
+    name: California
+    enabled: true
+  - code: NY
+    name: New York
+    enabled: true
+locals:
+  - city: New York City
+    state: NY
+    ordinance: Fair Workweek
+    enabled: true
+  - city: Chicago
+    state: IL
+    ordinance: Fair Workweek
+    enabled: false
