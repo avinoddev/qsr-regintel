@@ -1,38 +1,22 @@
-<<<<<<< HEAD
-# qsr-regintel
-=======
+# QSR-RegIntel 🏪⚖️
 
-# QSR-RegIntel — Regulatory Intelligence Platform (Starter)
+**Automated Regulatory Intelligence Platform for Quick Service Restaurants (QSRs)**
 
-This repository is a production-ready starter for an AI-driven regulatory intelligence platform
-targeting U.S. labor regulations for Quick Service Restaurants (QSRs). It implements the
-multi-agent pipeline described in your spec: Discovery → Fetch → Parse → Normalize → Verify →
-Score Severity → Change-Watch → Publish.
+This project is an AI-driven system that continuously monitors, extracts, and normalizes labor regulations (federal, state, and local) that impact QSR operators.  
+It provides both **machine-readable outputs** (JSON, API) and **human-friendly digests** (PDFs) with severity scoring and review workflows.
 
-> Generated on 2025-08-25T04:31:46.657002Z
+---
 
-## Quick Start (Local)
+## 🚀 Features
 
-1) Install Docker and Docker Compose.
-2) `make up` (starts Postgres, Redis, MinIO, API, Workers).
-3) Visit `http://localhost:8080/docs` for API (FastAPI).
-4) `make seed` to seed baseline config (jurisdictions, families).
-5) `make ingest CA` to run a California demo ingestion job (stub extractor).
+- **Multi-agent pipeline**: discover → fetch → parse → normalize → verify → publish.
+- **Persistence**: all rules stored in Postgres with full provenance (citations, raw source, severity).
+- **Artifact storage**: raw HTML/PDF and generated digests stored in MinIO (S3-compatible).
+- **PDF digests**: auto-generated jurisdiction reports, downloadable via presigned URLs.
+- **Verifier v1**: section + quote binding with confidence scoring; low-confidence items pushed into a review queue.
+- **API**: REST endpoints for querying rules, downloading PDFs, and managing review items.
 
-## Services
-
-- **API**: FastAPI at `:8080`
-- **Workers**: Celery workers executing pipeline jobs
-- **Queue**: Redis (broker + result backend)
-- **DB**: Postgres
-- **Blob store**: MinIO (S3 compatible) for raw documents and rendered PDFs
-
-## Folders
-- `apps/api` — REST API
-- `apps/workers` — Celery tasks for pipeline stages
-- `apps/pdfgen` — Jurisdiction/Category digest rendering
-- `libs/models` — Pydantic + SQLAlchemy models
-- `libs/rules` — Specialists per rule family
+---
 - `libs/severity` — Severity scoring heuristics
 - `libs/common` — Utilities (fetching, parsing, OCR, robots, hashing, change-diff)
 - `infra` — Docker Compose, Alembic migrations, config
